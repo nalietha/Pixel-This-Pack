@@ -1,0 +1,39 @@
+[project]
+name = "pixel-this-pack"
+version = "2.0.0"
+description = "Builds Pixel Me This content packs (pack.json + images) from Pixel This Art output."
+requires-python = ">=3.11"
+dependencies = [
+    "sv-ttk>=2.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller>=6.6",
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+pixel-this-pack = "pixel_this_pack.cli:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pixel_this_pack*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]

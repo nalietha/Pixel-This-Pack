@@ -1,0 +1,9 @@
+# Pixel This Pack - runtime dependencies (Python 3.11+)
+#
+# The GUI uses tkinter, which ships with CPython but is NOT a pip package.
+#   Debian/Ubuntu : sudo apt install python3-tk
+#   Fedora        : sudo dnf install python3-tkinter
+#   Windows/macOS : included with the python.org installer
+
+# Dark theme, same as Pixel This Art. Optional: falls back to the "clam" theme.
+sv-ttk>=2.6
